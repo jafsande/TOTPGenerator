@@ -1,0 +1,14 @@
+@import play.mvc.Http.Request
+@(qrurl: String)(implicit request: Request, messages: play.i18n.Messages)
+
+@main("QR Generator") {
+
+    <h1>QR Generator</h1>
+
+    <hr/>
+
+    <img src=@qrurl class="img-fluid" alt="QR Code">
+
+    <hr/>
+    
+}

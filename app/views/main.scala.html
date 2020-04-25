@@ -1,0 +1,92 @@
+@*
+ * This template is called from the `index` template. This template
+ * handles the rendering of the page header and body tags. It takes
+ * two arguments, a `String` for the title of the page and an `Html`
+ * object to insert into the body of the page.
+ *@
+@(title: String)(content: Html)
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="@@jafsande">
+    <link rel="icon" href="@routes.Assets.versioned("images/favicon.png")">
+
+    <title>QR Generator</title>
+
+    <!-- Bootstrap 4.4.1 core CSS -->
+    <link rel="stylesheet" 
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+          crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="@routes.Assets.versioned("stylesheets/main.css")" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <!-- Navigation Menu-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+      <!-- Page 'brtand' (top left)-->
+      <a class="navbar-brand" href="@routes.QRController.getUserName()"><img src="@routes.Assets.versioned("images/favicon.png")" alt="index"></a>
+
+      <!-- Responsive menu button - display when page is collapsed (e.g. mobile) -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Links-->
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+
+          <!-- Each link is a list item <li> -->
+          <!-- nav-item active used to highlight current page-->
+
+          <!-- Home -->
+          <li class="nav-item active">
+            <a class="nav-link" href="@routes.QRController.getUserName()">Generate QR<span class="sr-only">(current)</span></a>
+          </li>
+
+          <!-- About -->
+          <li class="nav-item">
+            <a class="nav-link" href="@routes.QRController.getCode()">Validate Code</a>
+          </li>
+
+          <!-- Example Dropdown menu (# links point to this page) -->
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown Menu</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="@routes.QRController.getUserName()">Generate QR</a>
+              <a class="dropdown-item" href="@routes.QRController.getCode()">Validate Code</a>
+            </div>
+          </li> -->
+        </ul> <!-- End of Nav list-->
+      </div>
+    </nav>
+
+    <!-- Content area-->
+    <main role="main" class="container-fluid">
+      <!-- Page content goes here -->
+      @content
+
+    </main><!-- /.container -->
+
+    <!-- Page Footer-->
+    <!-- css class .footer defined in ./css/style.css -->
+    <footer class="footer">
+        <div class="container">
+          <span class="text-muted">@@jafsande&copy; - Master Ciberseguridad</span>
+        </div>
+      </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
